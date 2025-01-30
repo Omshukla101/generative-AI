@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fun Facts Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: rgb(2, 2, 41);
+            color: rgb(217, 217, 239);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: rgb(8, 8, 138);
+            color: white;
+        }
+
+        #fact-display {
+            margin: 20px;
+            font-size: 18px;
+            color: white;
+        }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            body {
+                margin-top: 20px;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            #fact-display {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            #fact-display {
+                font-size: 14px;
+            }
+
+            button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Fun Facts About Me!</h1>
+    <div id="fact-display">Click the button to see a fun fact!</div>
+    <button onclick="generateFact()">Generate Another Fun Fact</button>
+    <script>
+        const facts = [
+            "I love hiking.",
+            "I like crocodiles.",
+            "I am an avid coder and love to code often.",
+            "I once cooked a taco.",
+            "I speak three languages fluently.",
+            "I’m learning to play the guitar in my free time."
+        ];
+
+        function generateFact() {
+            const factDisplay = document.getElementById('fact-display');
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factDisplay.textContent = facts[randomIndex];
+        }
+    </script>
+</body>
+</html>
